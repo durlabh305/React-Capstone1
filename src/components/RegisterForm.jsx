@@ -82,11 +82,13 @@ export default function RegisterForm() {
                 return {...prev, registerbox: null}
             })
         }
-        
+
         if (isError){
             return;
         }
         else{
+            // to submit the values in local storage
+            window.localStorage.setItem("userInfo", JSON.stringify(formValues));
             navigate("/info");
         }
     }
