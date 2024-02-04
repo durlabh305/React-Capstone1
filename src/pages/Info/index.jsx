@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 //for selecting and non selecting we will use usestate
 
+// Object passed inside the array.
 const genres = [
 
     {
@@ -98,6 +99,7 @@ function Info() {
                     <></>
                 )}
                 <button style={{ background: "green", padding: "12px", color: "white", borderRadius: "12px", border: "none" }} onClick={() => {
+                    window.localStorage.setItem("selectedMovies", JSON.stringify(selectedMovies));
                     navigate("/showcase")
                 }}
                 disabled={selectedMovies.length < 3}>Next</button>
